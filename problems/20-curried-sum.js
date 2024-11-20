@@ -43,7 +43,23 @@ AFTER YOU ARE FINISHED WITH THIS PROBLEM, ASK FOR A CODE REVIEW
 ***********************************************************************/
 
 function curriedSum(numArgs) {
-  // Your code here
+  let numbers = []; // Initialize numbers to be summed array
+
+  function _curriedSum(num) {
+    numbers.push(num); // Append each new value within the numbers array
+
+    if (numbers.length === numArgs){
+      // Once the numbers array is the same length as numArgs it will return - sum of all array elements
+      return numbers.reduce((sum, el) => sum + el, 0);
+    } else {
+
+      // It will return itself if the numbers array is not the same length as numArgs
+      return _curriedSum;
+    }
+  }
+  // Returns inner function to begin closure and collect arguments
+  return _curriedSum;
+
 }
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 try {

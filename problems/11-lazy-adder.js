@@ -24,6 +24,15 @@ AFTER YOU ARE FINISHED WITH THIS PROBLEM, ASK FOR A CODE REVIEW
 
 function lazyAdder(firstNum) {
   // Your code here
+
+  // uses three closure/function returns to pass through 3 numbers and add them
+  // on the final call
+  return secondNum => {
+    return thirdNum => {
+      return firstNum + secondNum + thirdNum;
+    }
+
+  }
 }
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/

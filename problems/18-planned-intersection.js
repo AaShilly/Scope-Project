@@ -16,7 +16,16 @@ console.log(fame(["a", "f", "z", "b"])); // returns [ 'f', 'a' ]
 *******************************************************************************/
 
 function plannedIntersect(firstArr) {
-  // Your code here
+  // Returns a second function that compares each element of the first and second Array
+  // Using closure it is able to access the outer function parameter and returns a new
+  // array with matching elements of the two arrays
+  return (secondArr) => {
+    // Filters first array elements to check whether they are included withint he second Array
+    let intersectArr = firstArr.filter(el => secondArr.includes(el));// Create new array to store the intersecting elements of First and Second Array
+
+    // Return the array
+    return intersectArr;
+  }
 }
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*************************/

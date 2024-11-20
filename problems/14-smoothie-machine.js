@@ -4,7 +4,7 @@ and returns a function.
 
 The returned function will also accept any number of parameters and will
 return a string including all of the parameters of smoothieMachine as well
-as the returned function's parameters. Look at the examples for a guide of 
+as the returned function's parameters. Look at the examples for a guide of
 how your return should be formatted!
 
 See below for examples:
@@ -23,8 +23,19 @@ console.log(smoothie2("pineapple"));
 // prints "I'm having a smoothie with apples and bananas and berries and pineapple"
 ***********************************************************************/
 
-const smoothieMachine = (...ingredients) => {
+const smoothieMachine = (...initialIngredients) => {
   // Your code here
+  let ingredients = [...initialIngredients]; //Initialize an array to hold all ingredients
+
+  //Use a Inner function that will pass in new Ingredients
+  return (...newIngredients) => {
+    //Add new ingredients to the ingredients array/list
+    ingredients.push(...newIngredients);
+
+    //Use temporal literal to return a string with the added ingredients separated by " and "
+    return `I'm having a smoothie with ${ingredients.join(" and ")}`;
+  };
+
 };
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/

@@ -10,6 +10,14 @@ mirrorArray(['a', 'b', 'c', 'd']); // => [ 'a', 'b', 'c', 'd', 'd', 'c', 'b', 'a
 
 const mirrorArray = (array) => {
   // Your code here
+
+  // first creates a shallow coy of array using the spread paramater
+  // next the mirrored array variable is reversed so that it will not
+  // mutate the original array.
+  let mirrored = [...array].reverse();
+
+  // the original and mirrored arr are concatenated together
+  return [...array, ...mirrored];
 };
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 try {

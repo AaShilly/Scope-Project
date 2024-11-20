@@ -12,6 +12,13 @@ arrowRestSum(0); // => 0
 
 const arrowRestSum = (...otherNums) => {
   // Your code here
+  let sum = 0;
+
+  // forEach arr method used on the otherNums rest variable
+  // to iterate add all numbers from passed in #s from arrowRestSum func
+  otherNums.forEach(num => sum += num);
+
+  return sum;
 };
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/

@@ -26,7 +26,25 @@ Example 3:
 ***********************************************************************/
 function coinCollector(numCoins) {
   // Your code here
+  let coinPouch = []; // Creates a coin pouch array to store coin values
+
+  return coinValue => {
+    // Adds each coin value to the coin pouch array
+    coinPouch.push(coinValue);
+
+    // Return the filled coin pouch array once it equals the parameter numCoins
+    if(coinPouch.length === numCoins){
+    return coinPouch;
+    }
+    //returns a blank function until the above condition is met
+    return function() {};
+  }
 }
+
+let threeCoins = coinCollector(3); // returns a function
+  threeCoins(25); // returns a function
+  threeCoins(5); // returns a function
+  console.log(threeCoins(10)); // prints [ 25, 5, 10 ]
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 try {

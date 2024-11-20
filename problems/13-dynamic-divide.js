@@ -20,6 +20,11 @@ divideByFive(50); // returns 10
 
 function dynamicDivide(divisor) {
   // Your code here
+
+  // Inner function returns the division of the dividend and divisor
+  // The divisor is a outer function variable while the dividend is provided
+  // as a argument by the invoked returned function
+  return dividend => dividend / divisor;
 }
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
